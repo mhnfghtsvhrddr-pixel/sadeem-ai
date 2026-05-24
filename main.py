@@ -9,6 +9,7 @@
 from signalwire.ai_agent import AgentBase, FunctionResult
 from datetime import datetime
 import secrets
+import os
 
 # ═══════════════════════════════════════════════════════════
 # 🗄️ قاعدة البيانات
@@ -44,10 +45,11 @@ class SadeemAgent(AgentBase):
     """وكيل سديم لاستقبال عيادة الأسنان"""
     
     def __init__(self):
+        port = int(os.environ.get("PORT", 3000))
         super().__init__(
             name="sadeem-dental-agent",
             route="/dental",
-            port=3000
+            port=port
         )
         self._init_sadeem()
     
@@ -363,11 +365,12 @@ def transfer_to_human(args, raw_data=None):
 # ═══════════════════════════════════════════════════════════
 
 if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 3000))
     print("=" * 50)
     print("🦷 مركز الابتسامة لطب الأسنان")
     print("   سديم AI - وكيل الحجز الذكي")
     print("=" * 50)
-    print("✅ الوكيل: http://0.0.0.0:3000/dental")
+    print(f"✅ الوكيل: http://0.0.0.0:{port}/dental")
     print("📋 الأدوات: lookup_patient, get_available_slots,")
     print("   add_appointment, send_confirmation_sms,")
     print("   check_appointment, cancel_appointment,")

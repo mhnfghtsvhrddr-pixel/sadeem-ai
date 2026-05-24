@@ -6,7 +6,11 @@
 ═══════════════════════════════════════════════════════════════
 """
 
-from signalwire.ai_agent import AgentBase, FunctionResult
+try:
+    from signalwire.ai_agent import AgentBase, FunctionResult
+except ImportError:
+    raise ImportError("❌ يجب تثبيت مكتبة signalwire-ai-agent. استخدم: pip install signalwire-ai")
+
 from datetime import datetime
 import secrets
 import os

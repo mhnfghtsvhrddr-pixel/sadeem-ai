@@ -1,1 +1,1 @@
-signalwire
+signalwire>=2.0.0

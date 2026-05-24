@@ -6,7 +6,7 @@
 ═══════════════════════════════════════════════════════════════
 """
 
-from signalwire import AgentBase, FunctionResult
+from signalwire.ai_agent import AgentBase, FunctionResult
 from datetime import datetime
 import secrets
 
@@ -25,13 +25,6 @@ TIME_SLOTS = {
     "الثلاثاء": ["8:00 ص", "9:00 ص", "11:00 ص", "3:00 م", "4:00 م", "5:00 م", "7:00 م"],
     "الأربعاء": ["10:00 ص", "11:00 ص", "12:00 م", "2:00 م", "5:00 م", "6:00 م", "8:00 م"],
     "الخميس":   ["9:00 ص", "10:00 ص", "1:00 م", "3:00 م", "4:00 م", "6:00 م", "7:00 م"],
-}
-
-DOCTORS = {
-    "dr_ahmed":  {"name": "د. أحمد", "specialty": "تقويم أسنان"},
-    "dr_sara":   {"name": "د. سارة", "specialty": "علاج جذور"},
-    "dr_khaled": {"name": "د. خالد", "specialty": "زراعة أسنان"},
-    "dr_noora":  {"name": "د. نورا", "specialty": "أسنان أطفال"},
 }
 
 SERVICES = {
